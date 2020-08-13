@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="particles-demo-style.css">
+      <title>particles Demo</title>
+    </head>
+    <body>
+         <canvas class="background"></canvas>
+
+         <!--- シャッターアニメーション -->
+          <div class="shutter">
+                <div class="container">
+                  <div class="box">
+                      <h1>HOTARU</h1>
+                  </div>
+                </div>
+          </div>
+
+          <!-- Java Script Animation particles.js -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+
+          <script>
+            window.onload = function() {
+              Particles.init({
+                selector: '.background',
+                sizeVariations: 7,
+                color: ['#ffe556', '#ffe556', '#ffe556'] 
+                });
+              };
+          </script>
+    </body>
+</html>
