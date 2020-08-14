@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/* シャッターアニメーション --- */
+.shutter{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:black;
+  background-blend-mode: soft-ligh t;
+  z-index:9999;
+  animation: byeShutter 5.0s forwards;
+ }
+  
+.shutter::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    margin:auto;
+    background-color:#f3f3f3;
+    width:0;
+    height:1px;
+    animation: shutterOpen 5.0s forwards;  
+ }
+
+ .content{
+  animation: contentScale 2.6s forwards;
+ }
+
+@keyframes byeShutter{
+  70%{
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+    display:none;
+    z-index:-1;
+   }
+}
+
+@keyframes shutterOpen{
+  0%{
+    width:0;
+    height:1px;
+  }
+  50%{
+    width:100%;
+    height:1px;
+  }
+  90%{
+    width:100%;
+    height:100%;
+  }
+  100%{
+    width:100%;
+    height:100%;
+  }
+}
+
+@keyframes contentScale{
+  70%{
+    transform:perspective(800px) scale(0.9) rotateX(15deg);
+  }
+  100%{
+    transform:perspective(800px) scale(1) rotateX(0);
+  }
+}
+
+
+/* Java Script Animation particles.js --*/
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+
+.background {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* Default Styling --*/
+body {
+  font-family: 'Merienda', cursive;
+  background-image: url(dense-forest1.jpg);
+  min-height: 100vh;
+  background-color: #402717;
+  background-blend-mode: hard-light;
+  background-size: cover;
+  object-fit: contain;
+  object-position: center top;
+  background-repeat: no-repeat;
+}
+.container {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.box {
+  color: yellow;
+ } 
+
+@media (max-width: 600px) {
+}
