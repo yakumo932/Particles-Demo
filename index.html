@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="particles-demo-style2.css">
+          <title>particles Demo</title>
+        </head>
+      <body>
+
+         <canvas class="background"></canvas>
+  
+         <!--- シャッターアニメーション -->
+          <div class="shutter">
+            <div class="container">
+                  <div class="box">
+                    <h1>HOTARU</h1>
+                  </div>
+                </div>
+          </div>
+            <!-- pariclec.js -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+              <script>
+                window.onload = function() {
+                  Particles.init({
+                    selector: '.background',
+                    sizeVariations: 7,
+                    color: ['#ffe556', 'rgba(255,219,78,.5)', 'rgba(255,219,78,.3)'] 
+                    /*color: ['#ffe556', '#ffe556', '#ffe556'] */
+                    });
+                  };
+              </script>
+             <!-- 画像処理 -->
+              <script>
+                    const images = ['dense-forest1.jpg'];
+                    images.forEach(function(item,index) {
+                      preloadImage(item);
+                    }
+                    );
+                    function preloadImage(path) {
+                      let imgTag = document.createElement('img');
+                      imgTag.src = path;
+                    }
+              </script>            
+      </body>
+  </html>
